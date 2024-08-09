@@ -72,7 +72,7 @@ def calculate_initial_temperature(distances, N):
     mean_distances = sum_distances / (N * (N - 1))
     
     # Calculate the standard deviation of all city routes
-    std_dev = np.sqrt(mean_squared_distances - mean_squared_distances ** 2)
+    std_dev = np.sqrt(mean_squared_distances - mean_distances ** 2)
     
     # Triple the standard deviation as the initial temperature
     initial_temperature = 2 * std_dev
@@ -125,7 +125,6 @@ def find_shortest_route(distances, N):
     
     # Initialization of temporary variables
     step = 0
-    rotation_index = 0
     process = True
 
     # Start the loop
