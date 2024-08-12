@@ -337,3 +337,7 @@ acc_rate_list.append(accuracy_rate)
 shortest_len_list.append(shortest_length)
 
 plot_accuracy_and_length(N_list, acc_rate_list, shortest_len_list)
+
+print('N list =', N_list)
+print('Estimated Accuracy Rate =', acc_rate_list)
+print('Shortest Route Length =', shortest_len_list)
