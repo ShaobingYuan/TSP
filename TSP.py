@@ -307,7 +307,7 @@ def plot_accuracy_and_length(N_list, acc_rate_list, shortest_len_list):
     plt.show()
 
 
-N_list = [5, 10, 15, 20, 25, 30]
+N_list = [5, 10, 15, 20, 25, 30, 40, 50]
 number_of_init = 100
 
 start_time = time.time()
@@ -318,24 +318,22 @@ end_time = time.time()
 
 print('time elapsed =', end_time-start_time)
 
-# =============================================================================
-# for N in [5, 25, 50, 100]:
-#     cities_coordinates = generate_cities(N)
-#     distances = calculate_distances(cities_coordinates, N)
-#     
-#     start_time = time.time()
-#     
-#     shortest_route, shortest_length, accuracy_rate = try_all_initial_guesses(distances, N)
-#     
-#     end_time = time.time()
-#     
-#     print('time elapsed =', end_time-start_time)
-#     
-#     plot_route(shortest_route, cities_coordinates, N)
-#     
-# N_list.append(100)
-# acc_rate_list.append(accuracy_rate)
-# shortest_len_list.append(shortest_length)
-# =============================================================================
+for N in [5, 25, 50, 100]:
+    cities_coordinates = generate_cities(N)
+    distances = calculate_distances(cities_coordinates, N)
+    
+    start_time = time.time()
+    
+    shortest_route, shortest_length, accuracy_rate = try_all_initial_guesses(distances, N)
+    
+    end_time = time.time()
+    
+    print('time elapsed =', end_time-start_time)
+    
+    plot_route(shortest_route, cities_coordinates, N)
+    
+N_list.append(100)
+acc_rate_list.append(accuracy_rate)
+shortest_len_list.append(shortest_length)
 
 plot_accuracy_and_length(N_list, acc_rate_list, shortest_len_list)
